@@ -13,6 +13,8 @@
     "@workspace/i18n-config": "workspace:*",
     "@workspace/types": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
+    "@workspace/consent": "workspace:*",
+    "@workspace/seo": "workspace:*",
     "prettier": "^3.5.1",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
