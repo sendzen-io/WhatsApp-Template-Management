@@ -1,26 +1,26 @@
 {
-  "name": "shadcn-ui-monorepo",
+  "name": "Sendzen",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "pnpm:run" : "pnpm run dev",
+    "pnpm:run": "pnpm run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@workspace/consent": "workspace:*",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/i18n-config": "workspace:*",
+    "@workspace/seo": "workspace:*",
     "@workspace/types": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
-    "@workspace/consent": "workspace:*",
-    "@workspace/seo": "workspace:*",
     "prettier": "^3.5.1",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": ">=20"
   },
