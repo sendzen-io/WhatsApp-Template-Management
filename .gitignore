@@ -6,6 +6,7 @@ sendzen-mockup
 .pnp
 .pnp.js
 .vs
+.cursor
 
 # Local env files
 .env
@@ -36,3 +37,4 @@ npm-debug.log*
 # Misc
 .DS_Store
 *.pem
+.env*.local
