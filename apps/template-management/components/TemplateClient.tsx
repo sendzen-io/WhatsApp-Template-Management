@@ -101,12 +101,20 @@ const TemplateClient: React.FC = () => {
   };
 
   const handleFileUpload = async (file: File): Promise<string> => {
-    console.log("Uploading file:", file.name);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    const url = `https://example.com/uploads/${file.name}`;
-    console.log("File uploaded to:", url);
-    return url;
+    try {
+      console.log("Uploading file via Meta API:", file.name);
+      const result = await templateApi.uploadFile(file);
+      
+      if (result.success && result.fileHandle) {
+        console.log("File uploaded successfully via Meta API, handle:", result.fileHandle);
+        return result.fileHandle;
+      } else {
+        throw new Error(result.error || "Meta API upload failed");
+      }
+    } catch (error) {
+      console.error("Meta API file upload error:", error);
+      throw error;
+    }
   };
 
   const handlePreviewTemplate = (templateId: string) => {
