@@ -85,7 +85,7 @@ const TemplateClient: React.FC = () => {
       setLoading(true)
       setError(null)
       
-      const response = await templateApi.get_MessageTemplates(cursor, 10, direction) as any;
+      const response = await templateApi.get_MessageTemplates(cursor, 50, direction) as any;
 
       let templates: MessageTemplate[] = [];
       let paginationInfo: PaginationInfo | undefined = undefined;
