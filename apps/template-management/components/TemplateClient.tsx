@@ -85,7 +85,7 @@ const TemplateClient: React.FC = () => {
       setLoading(true)
       setError(null)
       
-      const response = await templateApi.get_MessageTemplates(cursor, 10, direction) as any;
+      const response = await templateApi.get_MessageTemplates(cursor, 50, direction) as any;
 
       let templates: MessageTemplate[] = [];
       let paginationInfo: PaginationInfo | undefined = undefined;
@@ -217,7 +217,7 @@ const TemplateClient: React.FC = () => {
       setCursorHistory(prev => (currentCursor ? [...prev, currentCursor] : prev));
       loadTemplates(pagination.cursors.after, false, 'forward');
     }
-    if(!pagination?.hasNextPage && !pagination?.hasPreviousPage){
+    if(!pagination?.hasNextPage && !pagination?.hasPreviousPage && allTemplates.length === 50){
       loadTemplates(pagination?.cursors?.after, false, 'forward');
     }
   }
