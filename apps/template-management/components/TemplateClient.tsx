@@ -182,7 +182,6 @@ const TemplateClient: React.FC = () => {
     approved: number;
     pending: number;
     rejected: number;
-    withMedia: number;
   }>(() => {
     const total = allTemplates.length;
     const hasMore = !pagination?.hasNextPage && !pagination?.hasPreviousPage ? true : pagination?.hasNextPage ?? false;
@@ -192,8 +191,7 @@ const TemplateClient: React.FC = () => {
       total: displayTotal,
       approved: allTemplates.filter(t => t.status.toLowerCase() === 'approved').length,
       pending: allTemplates.filter(t => t.status.toLowerCase() === 'pending').length,
-      rejected: allTemplates.filter(t => t.status.toLowerCase() === 'rejected').length,
-      withMedia: allTemplates.filter(t => t.components?.some(c => c.type === 'HEADER' && 'format' in c && ['IMAGE', 'VIDEO', 'DOCUMENT'].includes(c.format as string))).length,
+      rejected: allTemplates.filter(t => t.status.toLowerCase() === 'rejected').length
     };
   }, [allTemplates, pagination?.hasNextPage, pagination?.hasPreviousPage]);
 
