@@ -186,7 +186,8 @@ const TemplateClient: React.FC = () => {
   }>(() => {
     const total = allTemplates.length;
     const hasMore = !pagination?.hasNextPage && !pagination?.hasPreviousPage ? true : pagination?.hasNextPage ?? false;
-    const displayTotal = hasMore ? `${total}+` : total;
+    // const displayTotal = hasMore ? `${total}+` : total;
+    const displayTotal = total;
     
     return {
       total: displayTotal,
