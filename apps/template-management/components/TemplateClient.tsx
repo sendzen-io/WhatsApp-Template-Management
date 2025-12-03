@@ -251,15 +251,6 @@ const TemplateClient: React.FC = () => {
     }
   };
 
-  const handleFileUpload = async (file: File): Promise<string> => {
-    console.log("Uploading file:", file.name);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    const url = `https://example.com/uploads/${file.name}`;
-    console.log("File uploaded to:", url);
-    return url;
-  };
-
   const handlePreviewTemplate = (templateId: string) => {
     console.log("Preview template:", templateId)
   }
@@ -318,7 +309,6 @@ const TemplateClient: React.FC = () => {
             handleDeleteTemplate(template);
           }
         }}
-        onFileUpload={handleFileUpload}
         onNextPage={handleNextPage}
         onPreviousPage={handlePreviousPage}
     />
